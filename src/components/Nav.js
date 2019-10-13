@@ -1,15 +1,16 @@
 import React from "react";
+import { animated } from "react-spring";
 
-const Nav = () => {
+const Nav = ({ style }) => {
   return (
-    <div className='nav-wrapper'>
+    <animated.div className='nav-wrapper' style={style}>
       <nav>
         <a href='#'>Home</a>
         <a href='#'>List</a>
         <a href='#'>Check</a>
         <a href='#'>Tuts</a>
       </nav>
-    </div>
+    </animated.div>
   );
 };
 
