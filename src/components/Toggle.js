@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { animated, useTransition } from "react-spring";
 
 const Toggle = () => {
   const [isToggled, setToggle] = useState(false);
-  const { fontWeight, x, y, z } = useSpring({
-    fontWeight: isToggled ? "100" : "800",
-    x: isToggled ? 0 : -50,
-    y: isToggled ? 0 : -50,
-    z: isToggled ? 0 : -50
+  const transition = useTransition(isToggled, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
   });
 
   return (
     <div>
-      <AnimatedTitle
-        style={{
-          fontWeight,
-          transform: y.interpolate(y => `translate3d(0,${y}px,0)`)
-        }}>
-        Hello
-      </AnimatedTitle>
+      {transition.map(
+        ({ item, key, props }) =>
+          item && (
+            <AnimatedTitle key={key} style={props}>
+              Hello
+            </AnimatedTitle>
+          )
+      )}
       <button onClick={() => setToggle(!isToggled)}>Toggle</button>
     </div>
   );
