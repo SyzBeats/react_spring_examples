@@ -12,6 +12,9 @@ function App() {
     transform: isNavOpen ? `translate3d(0,0,0) scale(1)` : `translate3d(100%,0,0) scale(0.6)`,
     filter: isNavOpen ? `brightness(1)` : `brightness(0)`
   });
+  const fadeInUp = useSpring({
+    transform: isNavOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`
+  });
   return (
     <div className='App'>
       <header className='App-header'>
@@ -20,10 +23,10 @@ function App() {
         </button>
         <img src={logo} className='App-logo' alt='logo' />
       </header>
-      {/* <Nav style={navAnimation} /> */}
+      <Nav style={fadeInUp} />
       <main>
         {/* <Routes /> */}
-        <Checkout isOpen={isNavOpen} />
+        {/* <Checkout isOpen={isNavOpen} /> */}
         <Modal />
       </main>
     </div>
