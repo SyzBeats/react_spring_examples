@@ -4,8 +4,10 @@ import "./App.css";
 import logo from "./logo.svg";
 import Nav from "./components/Nav";
 import Routes from "./Routes";
-import Checkout from "./components/Checkout";
 import Modal from "./Modal";
+import Checkout from "./components/Checkout";
+import WayPoint from "./components/Waypoint";
+
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
   const navAnimation = useSpring({
@@ -15,6 +17,7 @@ function App() {
   const fadeInUp = useSpring({
     transform: isNavOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`
   });
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -26,8 +29,9 @@ function App() {
       {/* <Nav style={fadeInUp} /> */}
       <main>
         {/* <Routes /> */}
-        <Checkout isOpen={isNavOpen} />
         {/* <Modal /> */}
+        <Checkout isOpen={isNavOpen} />
+        <WayPoint />
       </main>
     </div>
   );
