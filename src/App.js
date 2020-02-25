@@ -23,11 +23,11 @@ function App() {
         </button>
         <img src={logo} className='App-logo' alt='logo' />
       </header>
-      <Nav style={fadeInUp} />
+      {/* <Nav style={fadeInUp} /> */}
       <main>
         {/* <Routes /> */}
-        {/* <Checkout isOpen={isNavOpen} /> */}
-        <Modal />
+        <Checkout isOpen={isNavOpen} />
+        {/* <Modal /> */}
       </main>
     </div>
   );
