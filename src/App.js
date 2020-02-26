@@ -5,9 +5,9 @@ import logo from "./logo.svg";
 import Nav from "./components/Nav";
 import Routes from "./Routes";
 import Modal from "./Modal";
-import Checkout from "./components/Checkout";
 import WayPoint from "./components/Waypoint";
-
+import Checkout from "./components/Checkout";
+import Boxes from "./components/Boxes";
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
   const navAnimation = useSpring({
@@ -30,8 +30,9 @@ function App() {
       <main>
         {/* <Routes /> */}
         {/* <Modal /> */}
+        {/* <WayPoint /> */}
         <Checkout isOpen={isNavOpen} />
-        <WayPoint />
+        <Boxes />
       </main>
     </div>
   );
